@@ -1,0 +1,50 @@
+.home
+  width: 100%
+  h1
+    font-size: 3rem
+    text-align: center
+  p
+    font-size: 1.5rem
+    text-align: center
+    line-height: 1.5
+  .title-summary
+    h1
+      width: 75%
+      margin: 0 auto 45px auto
+  .row-alternate
+    width: 100%
+    margin: 45px auto
+    .row-alternate-image,
+    .row-alternate-content
+      float: left
+      display: block
+      width: calc(50% - 30px)
+    &:nth-of-type(even)
+      .row-alternate-image,
+      .row-alternate-content
+        float: right
+    .row-alternate-image
+      width: calc(50% - 60px)
+      height: 300px
+      padding: 0 15px
+      img
+        height: 87.5%
+        width: 100%
+        object-fit: cover
+        object-position: center
+    .row-alternate-content
+      padding: 30px
+      p
+        font-size: 1.5rem
+        text-align: left
+      a
+        display: block
+        width: 225px
+        padding: 15px 22.5px
+        margin: 30px auto 0 auto
+        font-size: 1.5rem
+        text-align: center
+        background: #FFF
+        font-weight: bolder
+        border-radius: 90px
+        align-self: flex-end

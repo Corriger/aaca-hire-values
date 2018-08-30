@@ -1,0 +1,35 @@
+.about
+  width: 100%
+  h1
+    font-size: 3rem
+    text-align: center
+  p
+    font-size: 1.5rem
+    text-align: center
+    line-height: 1.5
+  .title-summary
+    h1
+      width: 75%
+      margin: 0 auto 45px auto
+  .row-basic
+    width: 100%
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+    margin: 45px auto
+    .row-basic-image,
+    .row-basic-content
+      width: calc(50% - 30px)
+    .row-basic-image
+      img
+        height: 100%
+        width: 100%
+        object-fit: contain
+        object-position: top center
+    .row-basic-content
+      display: flex
+      flex-flow: column
+      padding: 0 30px
+      p
+        font-size: 1.5rem
+        text-align: left

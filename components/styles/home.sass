@@ -8,43 +8,56 @@
     text-align: center
     line-height: 1.5
   .title-summary
+    padding: 0 30px 30px
     h1
       width: 75%
-      margin: 0 auto 45px auto
+      margin: 0 auto 45px
   .row-alternate
+    display: flex
     width: 100%
     margin: 45px auto
-    .row-alternate-image,
-    .row-alternate-content
-      float: left
-      display: block
-      width: calc(50% - 30px)
     &:nth-of-type(even)
-      .row-alternate-image,
-      .row-alternate-content
-        float: right
-    .row-alternate-image
-      width: calc(50% - 60px)
-      height: 300px
-      padding: 0 15px
-      img
-        height: 87.5%
+      flex-flow: row-reverse
+      .row-alternate-image
+        padding: 0 0 0 15px
+    @media only screen and (max-width: $max-mobile-width)
+      margin: 0
+  .row-alternate-image,
+  .row-alternate-content
+    display: block
+    width: 50%
+    @media only screen and (max-width: $max-mobile-width)
+      width: 100%
+      height: 100%
+  .row-alternate-image
+    height: 300px
+    padding: 0 15px 0 0
+    @media only screen and (max-width: $max-mobile-width)
+      display: none
+    img
+      height: 87.5%
+      width: 100%
+      object-fit: cover
+      object-position: center
+  .row-alternate-content
+    padding: 15px
+    p
+      font-size: 1.5rem
+      text-align: left
+      margin: 0 15px
+      @media only screen and (max-width: $max-mobile-width)
+    a
+      display: block
+      padding: 15px 22.5px
+      margin: 15px
+      font-size: 1.5rem
+      text-align: center
+      background: #FFF
+      font-weight: bolder
+      border-radius: 90px
+      align-self: flex-end
+      @media only screen and (max-width: $max-mobile-width)
         width: 100%
-        object-fit: cover
-        object-position: center
-    .row-alternate-content
-      padding: 30px
-      p
-        font-size: 1.5rem
-        text-align: left
-      a
-        display: block
-        width: 225px
-        padding: 15px 22.5px
-        margin: 30px auto 0 auto
-        font-size: 1.5rem
-        text-align: center
-        background: #FFF
-        font-weight: bolder
-        border-radius: 90px
-        align-self: flex-end
+        margin: 30px 0 0 0
+        padding: 15px 0
+        border-radius: 0

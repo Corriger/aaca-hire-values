@@ -1,0 +1,120 @@
+.contact
+  .row-basic
+    width: 100%
+    display: flex
+    flex-flow: row wrap
+    justify-content: center
+    margin: 0 auto 30px
+    @media only screen and (max-width: $max-tablet-width)
+      flex-flow: column
+      align-items: center
+    .row-basic-image,
+    .row-basic-content
+      width: calc(50% - 61px)
+      padding: 30px
+    .row-basic-image
+      @media only screen and (max-width: $max-tablet-width)
+        display: none
+      img
+        height: 100%
+        width: 100%
+        object-fit: contain
+        object-position: center
+    .row-basic-content
+      display: flex
+      justify-content: center
+      flex-flow: column
+      border-left: 2px solid black
+      @media only screen and (max-width: $max-tablet-width)
+        width: 100%
+        padding: 30px
+        border-left: 0
+      p
+        font-size: 1.5rem
+        text-align: left
+  .hard-code
+    display: block
+    margin: 15px auto
+    font-size: 22.5px
+    text-align: center
+  .form-select
+    display: flex
+    flex-flow: row wrap
+    margin: 45px auto
+    justify-content: space-evenly
+    align-items: center
+    width: 100%
+    @media only screen and (max-width: $max-tablet-width)
+      flex-flow: column
+      margin: 0
+      align-items: inherit
+    li
+      display: block
+      width: 150px
+      cursor: pointer
+      @media only screen and (max-width: $max-tablet-width)
+        width: auto
+        padding: 0 0 0 30px
+      strong
+        display: block
+        text-align: center
+        margin: 15px auto
+        width: 90%
+        @media only screen and (max-width: $max-tablet-width)
+          display: inline-block
+          text-align: initial
+      img
+        width: 100%
+        height: 100%
+        object-fit: contain
+        object-position: center
+        @media only screen and (max-width: $max-tablet-width)
+          display: none
+      span
+        display: none
+        @media only screen and (max-width: $max-tablet-width)
+          display: inline-block
+  .wpforms-validate,
+  .wpforms-form
+    width: 100%
+  .referral,
+  .volunteer,
+  .apply
+    display: none
+    margin: 15px auto
+    padding: 0 15px
+    border-left: 3px solid black
+    border-right: 3px solid black
+    .back
+      cursor: pointer
+    .wpforms-title
+      font-weight: bold
+      font-size: 1.5rem
+    textarea
+      width: 100%
+      height: 200px
+    .wpforms-container-full
+      position: absolute
+      top: 0
+      left: 0
+    .wpforms-field-description
+      font-style: italic
+    .wpforms-field-label
+      font-weight: bold
+      margin: 0 0 7.5px 0
+    .wpforms-field-row
+      display: flex
+    .wpforms-field-large
+      width: 100%
+      input
+        margin: 0 30px 0 0
+        @media only screen and (max-width: $max-mobile-width)
+          display: block
+          margin: 0
+          width: 100%
+    div
+      margin: 15px 0
+    label
+      display: block
+.current
+  display: block!important

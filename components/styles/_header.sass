@@ -1,6 +1,8 @@
 .main-header
   height: 120px
   border-bottom: 2px solid black
+  overflow: visible
+  padding: 0 30px 0 0
   .logo
     float: left
     width: 120px
@@ -9,25 +11,79 @@
     img
       width: 100%
   strong
+    margin: 0 0 7.5px 0
     font-size: 1.5em
     display: block
-  nav
-    float: right
+    @media only screen and (max-width: $max-mobile-width)
+      margin: 0
+      position: relative
+      top: 50%
+    @media only screen and(max-width: 560px)
+      display: none
+  &>nav
     display: flex
-    justify-content: center
+    justify-content: flex-end
     align-items: center
-    ul
-      display: flex
-      flex-flow: row wrap
+    @media only screen and (max-width: $max-mobile-width)
+      position: absolute
+      top: 120px
+      justify-content: space-evenly
       align-items: center
-      justify-content: center
+      flex-flow: column
+      width: 100vw
+      height: calc(100vh - 120px)
+      transform: translateX(-200%)
+      z-index: 99
+      background: #FFF
+    ul,
+    div
+      display: flex
+      justify-content: space-evenly
+      align-items: center
+      @media only screen and (max-width: $max-mobile-width)
+        flex-flow: column
       li
-        margin: 0 75px 0 0
+        a
+          @media only screen and (max-width: $max-mobile-width)
+            font-size: 5vh
+    ul
+      width: 100%
+      height: 100%
+    div
+      width: 55%
+      height: 70%
   .cta
+    cursor: pointer
     padding: 7.5px 30px
-    margin: 0 75px 0 0
-    // font-size: 1.5rem
     border: none
     border-radius: 90px
     background: #FF0000
     color: #FFF
+    text-transform: uppercase
+    @media only screen and (max-width: $max-mobile-width)
+      font-size: 5vh
+  .hmbr
+    display: none
+    @media only screen and (max-width: $max-mobile-width)
+      display: flex
+      flex-flow: column
+      align-items: center
+      justify-content: space-evenly
+      position: absolute
+      top: 0
+      right: 0
+      width: 60px
+      height: 60px
+    span
+      height: 10%
+      width: calc(100% - 10px)
+      background: black
+      border-radius: 30px
+.menu
+  transform: translateX(0%)!important
+.no-scroll
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  overflow: hidden

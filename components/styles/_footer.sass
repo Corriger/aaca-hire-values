@@ -5,6 +5,8 @@
   flex-flow: row wrap
   justify-content: space-evenly
   padding: 15px 60px
+  @media only screen and (max-width: $max-tablet-width)
+    justify-content: space-between
   .block
     ul
       margin: 0 0 15px 0
@@ -15,8 +17,10 @@
     ul
       li
         margin: 0 0 0 0
+    @media only screen and (max-width: $max-mobile-width)
+      display: none
   .cta
     background: #e6e6e6
     border: none
     padding: 7.5px 30px
-    margin: 0 75px 0 0
+    margin: 15px 75px 0 0

@@ -74,13 +74,23 @@ strong {
   font-weight: bold; }
 
 main {
-  margin: 60px auto;
   width: 100%;
-  max-width: 1024px; }
+  max-width: 1024px;
+  margin: 30px auto 0; }
+
+.cf:before,
+.cf:after {
+  content: "";
+  display: table; }
+
+.cf:after {
+  clear: both; }
 
 .main-header {
   height: 120px;
-  border-bottom: 2px solid black; }
+  border-bottom: 2px solid black;
+  overflow: visible;
+  padding: 0 30px 0 0; }
   .main-header .logo {
     float: left;
     width: 120px;
@@ -89,27 +99,91 @@ main {
     .main-header .logo img {
       width: 100%; }
   .main-header strong {
+    margin: 0 0 7.5px 0;
     font-size: 1.5em;
     display: block; }
-  .main-header nav {
-    float: right;
+    @media only screen and (max-width: 769px) {
+      .main-header strong {
+        margin: 0;
+        position: relative;
+        top: 50%; } }
+    @media only screen and (max-width: 560px) {
+      .main-header strong {
+        display: none; } }
+  .main-header > nav {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center; }
-    .main-header nav ul {
+    @media only screen and (max-width: 769px) {
+      .main-header > nav {
+        position: absolute;
+        top: 120px;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-flow: column;
+        width: 100vw;
+        height: calc(100vh - 120px);
+        transform: translateX(-200%);
+        z-index: 99;
+        background: #FFF; } }
+    .main-header > nav ul,
+    .main-header > nav div {
       display: flex;
-      flex-flow: row wrap;
-      align-items: center;
-      justify-content: center; }
-      .main-header nav ul li {
-        margin: 0 75px 0 0; }
+      justify-content: space-evenly;
+      align-items: center; }
+      @media only screen and (max-width: 769px) {
+        .main-header > nav ul,
+        .main-header > nav div {
+          flex-flow: column; } }
+      @media only screen and (max-width: 769px) {
+        .main-header > nav ul li a,
+        .main-header > nav div li a {
+          font-size: 5vh; } }
+    .main-header > nav ul {
+      width: 100%;
+      height: 100%; }
+    .main-header > nav div {
+      width: 55%;
+      height: 70%; }
   .main-header .cta {
+    cursor: pointer;
     padding: 7.5px 30px;
-    margin: 0 75px 0 0;
     border: none;
     border-radius: 90px;
     background: #FF0000;
-    color: #FFF; }
+    color: #FFF;
+    text-transform: uppercase; }
+    @media only screen and (max-width: 769px) {
+      .main-header .cta {
+        font-size: 5vh; } }
+  .main-header .hmbr {
+    display: none; }
+    @media only screen and (max-width: 769px) {
+      .main-header .hmbr {
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60px;
+        height: 60px; } }
+    .main-header .hmbr span {
+      height: 10%;
+      width: calc(100% - 10px);
+      background: black;
+      border-radius: 30px; }
+
+.menu {
+  transform: translateX(0%) !important; }
+
+.no-scroll {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden; }
 
 .main-footer {
   background: #5B5B5B;
@@ -118,6 +192,9 @@ main {
   flex-flow: row wrap;
   justify-content: space-evenly;
   padding: 15px 60px; }
+  @media only screen and (max-width: 992px) {
+    .main-footer {
+      justify-content: space-between; } }
   .main-footer .block ul {
     margin: 0 0 15px 0; }
     .main-footer .block ul li {
@@ -125,11 +202,14 @@ main {
       margin: 0 0 22.5px; }
   .main-footer #contact ul li {
     margin: 0 0 0 0; }
+  @media only screen and (max-width: 769px) {
+    .main-footer #contact {
+      display: none; } }
   .main-footer .cta {
     background: #e6e6e6;
     border: none;
     padding: 7.5px 30px;
-    margin: 0 75px 0 0; }
+    margin: 15px 75px 0 0; }
 
 .home {
   width: 100%; }
@@ -140,45 +220,64 @@ main {
     font-size: 1.5rem;
     text-align: center;
     line-height: 1.5; }
-  .home .title-summary h1 {
-    width: 75%;
-    margin: 0 auto 45px auto; }
+  .home .title-summary {
+    padding: 0 30px 30px; }
+    .home .title-summary h1 {
+      width: 75%;
+      margin: 0 auto 45px; }
   .home .row-alternate {
+    display: flex;
     width: 100%;
     margin: 45px auto; }
-    .home .row-alternate .row-alternate-image,
-    .home .row-alternate .row-alternate-content {
-      float: left;
-      display: block;
-      width: calc(50% - 30px); }
-    .home .row-alternate:nth-of-type(even) .row-alternate-image,
-    .home .row-alternate:nth-of-type(even) .row-alternate-content {
-      float: right; }
-    .home .row-alternate .row-alternate-image {
-      width: calc(50% - 60px);
-      height: 300px;
-      padding: 0 15px; }
-      .home .row-alternate .row-alternate-image img {
-        height: 87.5%;
+    .home .row-alternate:nth-of-type(even) {
+      flex-flow: row-reverse; }
+      .home .row-alternate:nth-of-type(even) .row-alternate-image {
+        padding: 0 0 0 15px; }
+    @media only screen and (max-width: 769px) {
+      .home .row-alternate {
+        margin: 0; } }
+  .home .row-alternate-image,
+  .home .row-alternate-content {
+    display: block;
+    width: 50%; }
+    @media only screen and (max-width: 769px) {
+      .home .row-alternate-image,
+      .home .row-alternate-content {
         width: 100%;
-        object-fit: cover;
-        object-position: center; }
-    .home .row-alternate .row-alternate-content {
-      padding: 30px; }
-      .home .row-alternate .row-alternate-content p {
-        font-size: 1.5rem;
-        text-align: left; }
-      .home .row-alternate .row-alternate-content a {
-        display: block;
-        width: 225px;
-        padding: 15px 22.5px;
-        margin: 30px auto 0 auto;
-        font-size: 1.5rem;
-        text-align: center;
-        background: #FFF;
-        font-weight: bolder;
-        border-radius: 90px;
-        align-self: flex-end; }
+        height: 100%; } }
+  .home .row-alternate-image {
+    height: 300px;
+    padding: 0 15px 0 0; }
+    @media only screen and (max-width: 769px) {
+      .home .row-alternate-image {
+        display: none; } }
+    .home .row-alternate-image img {
+      height: 87.5%;
+      width: 100%;
+      object-fit: cover;
+      object-position: center; }
+  .home .row-alternate-content {
+    padding: 15px; }
+    .home .row-alternate-content p {
+      font-size: 1.5rem;
+      text-align: left;
+      margin: 0 15px; }
+    .home .row-alternate-content a {
+      display: block;
+      padding: 15px 22.5px;
+      margin: 15px;
+      font-size: 1.5rem;
+      text-align: center;
+      background: #FFF;
+      font-weight: bolder;
+      border-radius: 90px;
+      align-self: flex-end; }
+      @media only screen and (max-width: 769px) {
+        .home .row-alternate-content a {
+          width: 100%;
+          margin: 30px 0 0 0;
+          padding: 15px 0;
+          border-radius: 0; } }
 
 .about {
   width: 100%; }
@@ -201,6 +300,10 @@ main {
     .about .row-basic .row-basic-image,
     .about .row-basic .row-basic-content {
       width: calc(50% - 30px); }
+      @media only screen and (max-width: 992px) {
+        .about .row-basic .row-basic-image,
+        .about .row-basic .row-basic-content {
+          width: 100%; } }
     .about .row-basic .row-basic-image img {
       height: 100%;
       width: 100%;
@@ -213,5 +316,158 @@ main {
       .about .row-basic .row-basic-content p {
         font-size: 1.5rem;
         text-align: left; }
+
+.contact .row-basic {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 0 auto 30px; }
+  @media only screen and (max-width: 992px) {
+    .contact .row-basic {
+      flex-flow: column;
+      align-items: center; } }
+  .contact .row-basic .row-basic-image,
+  .contact .row-basic .row-basic-content {
+    width: calc(50% - 61px);
+    padding: 30px; }
+  @media only screen and (max-width: 992px) {
+    .contact .row-basic .row-basic-image {
+      display: none; } }
+  .contact .row-basic .row-basic-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    object-position: center; }
+  .contact .row-basic .row-basic-content {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    border-left: 2px solid black; }
+    @media only screen and (max-width: 992px) {
+      .contact .row-basic .row-basic-content {
+        width: 100%;
+        padding: 30px;
+        border-left: 0; } }
+    .contact .row-basic .row-basic-content p {
+      font-size: 1.5rem;
+      text-align: left; }
+.contact .hard-code {
+  display: block;
+  margin: 15px auto;
+  font-size: 22.5px;
+  text-align: center; }
+.contact .form-select {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 45px auto;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%; }
+  @media only screen and (max-width: 992px) {
+    .contact .form-select {
+      flex-flow: column;
+      margin: 0;
+      align-items: inherit; } }
+  .contact .form-select li {
+    display: block;
+    width: 150px;
+    cursor: pointer; }
+    @media only screen and (max-width: 992px) {
+      .contact .form-select li {
+        width: auto;
+        padding: 0 0 0 30px; } }
+    .contact .form-select li strong {
+      display: block;
+      text-align: center;
+      margin: 15px auto;
+      width: 90%; }
+      @media only screen and (max-width: 992px) {
+        .contact .form-select li strong {
+          display: inline-block;
+          text-align: initial; } }
+    .contact .form-select li img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: center; }
+      @media only screen and (max-width: 992px) {
+        .contact .form-select li img {
+          display: none; } }
+    .contact .form-select li span {
+      display: none; }
+      @media only screen and (max-width: 992px) {
+        .contact .form-select li span {
+          display: inline-block; } }
+.contact .wpforms-validate,
+.contact .wpforms-form {
+  width: 100%; }
+.contact .referral,
+.contact .volunteer,
+.contact .apply {
+  display: none;
+  margin: 15px auto;
+  padding: 0 15px;
+  border-left: 3px solid black;
+  border-right: 3px solid black; }
+  .contact .referral .back,
+  .contact .volunteer .back,
+  .contact .apply .back {
+    cursor: pointer; }
+  .contact .referral .wpforms-title,
+  .contact .volunteer .wpforms-title,
+  .contact .apply .wpforms-title {
+    font-weight: bold;
+    font-size: 1.5rem; }
+  .contact .referral textarea,
+  .contact .volunteer textarea,
+  .contact .apply textarea {
+    width: 100%;
+    height: 200px; }
+  .contact .referral .wpforms-container-full,
+  .contact .volunteer .wpforms-container-full,
+  .contact .apply .wpforms-container-full {
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .contact .referral .wpforms-field-description,
+  .contact .volunteer .wpforms-field-description,
+  .contact .apply .wpforms-field-description {
+    font-style: italic; }
+  .contact .referral .wpforms-field-label,
+  .contact .volunteer .wpforms-field-label,
+  .contact .apply .wpforms-field-label {
+    font-weight: bold;
+    margin: 0 0 7.5px 0; }
+  .contact .referral .wpforms-field-row,
+  .contact .volunteer .wpforms-field-row,
+  .contact .apply .wpforms-field-row {
+    display: flex; }
+  .contact .referral .wpforms-field-large,
+  .contact .volunteer .wpforms-field-large,
+  .contact .apply .wpforms-field-large {
+    width: 100%; }
+    .contact .referral .wpforms-field-large input,
+    .contact .volunteer .wpforms-field-large input,
+    .contact .apply .wpforms-field-large input {
+      margin: 0 30px 0 0; }
+      @media only screen and (max-width: 769px) {
+        .contact .referral .wpforms-field-large input,
+        .contact .volunteer .wpforms-field-large input,
+        .contact .apply .wpforms-field-large input {
+          display: block;
+          margin: 0;
+          width: 100%; } }
+  .contact .referral div,
+  .contact .volunteer div,
+  .contact .apply div {
+    margin: 15px 0; }
+  .contact .referral label,
+  .contact .volunteer label,
+  .contact .apply label {
+    display: block; }
+
+.current {
+  display: block !important; }
 
 /*# sourceMappingURL=style.css.map */

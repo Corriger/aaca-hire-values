@@ -28,11 +28,19 @@
         </li>
       </ul>
       <div class="social">
-            <a class="fab fa-facebook-square 2x" href="#"></a>
-            <a class="fab fa-twitter-square 2x" href="#"></a>
+        <a href="#" style:'padding: 0 15px 0 0;'>
+          <i class="fab fa-facebook fa-2x" style='padding: 0 15px 0 0'></i>
+        </a>
+        <a href="#" style:'padding: 0 15px 0 0;'>
+          <i class="fab fa-facebook fa-2x" style='padding: 0 15px 0 0'></i>
+        </a>
       </div>
       <button class="cta">Donate</span>
     </div>
     </footer>
+      <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/mobile.js"></script>
+      <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/contacts.js"></script>
+      <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/font-awesome/js/brands.min.js"></script>
+      <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/font-awesome/js/fontawesome.min.js"></script>i
   </body>
 </html>

@@ -19,14 +19,15 @@
 
                         <?php get_template_part('about'); ?>
 
-                    <?php elseif( get_row_layout() == 'content' ): // check if the row layout has information ?>
+                    <?php elseif( get_row_layout() == 'contact' ): // check if the row layout has information ?>
 
-                        <?php get_template_part('content'); ?>
+                        <?php get_template_part('contact'); ?>
 
                     <?php endif; ?>
                 <?php endwhile; ?>
 
             <?php else : // no layouts found ?>
+              <p>Not here.</p>
                 <?php get_template_part('templates/components/empty-state'); ?>
             <?php endif; ?>
 

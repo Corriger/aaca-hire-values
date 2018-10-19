@@ -28,11 +28,14 @@
         </li>
       </ul>
       <div class="social">
-        <a href="#" style:'padding: 0 15px 0 0;'>
+        <a href="http://bit.ly/HireValuesFB" target="_blank"style:'padding: 0 15px 0 0;'>
           <i class="fab fa-facebook fa-2x" style='padding: 0 15px 0 0'></i>
         </a>
-        <a href="#" style:'padding: 0 15px 0 0;'>
-          <i class="fab fa-facebook fa-2x" style='padding: 0 15px 0 0'></i>
+        <a href="http://bit.ly/HireValueInstagram" target="_blank"style:'padding: 0 15px 0 0;'>
+          <i class="fab fa-instagram fa-2x" style='padding: 0 15px 0 0'></i>
+        </a>
+        <a href="http://bit.ly/HireValuesTwitter" target="_blank"style:'padding: 0 15px 0 0;'>
+          <i class="fab fa-twitter fa-2x" style='padding: 0 15px 0 0'></i>
         </a>
       </div>
       <button class="cta">Donate</span>
